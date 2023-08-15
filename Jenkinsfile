@@ -45,10 +45,8 @@ pipeline {
               script{
                   if (env.GIT_BRANCH == 'origin/main') {
                       env.DOCKER_TAG = "main-$GIT_COMMIT"
-                  } else if (env.GIT_BRANCH == 'origin/develop') {
-                      env.DOCKER_TAG = "develop-$GIT_COMMIT"
                   } else {
-                      env.DOCKER_TAG = "devops-$GIT_COMMIT"
+                      env.DOCKER_TAG = "develop-$GIT_COMMIT"
                   }
               }
               sh '/kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio:$DOCKER_TAG'
