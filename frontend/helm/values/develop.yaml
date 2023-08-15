@@ -1,9 +1,10 @@
 namespace: devops-portfolio
 
-appName: frontend
+appName: frontend-develop
 
 replicas: 1
 
 image: 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio:devops-a1fc654baf7024646dd8b0b4bf3aa50d068ee56a
 
 imagePullSecrets: regcred
+

@@ -1,6 +1,6 @@
 namespace: devops-portfolio
 
-appName: frontend
+appName: frontend-main
 
 replicas: 1
 
