@@ -71,7 +71,7 @@ pipeline {
               }
             }
             sh 'git checkout $BRANCH'
-            sh 'sed -E "s|image: .*|image: ${DOCKER_TAG}|" "./${BRANCH}.yaml" > temp.yaml'
+            sh 'sed -E "s|image: .*|image: 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio:${DOCKER_TAG}|" "./${BRANCH}.yaml" > temp.yaml'
             sh 'mv temp.yaml $BRANCH.yaml'
             sh 'git config --global user.name "Jenkins"'
             sh "git config --global user.email jenkins@ci.com"
