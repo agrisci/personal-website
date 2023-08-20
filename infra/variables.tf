@@ -9,5 +9,5 @@ variable "availability_zone" {
 }
 
 variable "ssh_public_key_file" {
-  type    = string
+  type = string
 }
