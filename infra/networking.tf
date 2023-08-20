@@ -55,7 +55,7 @@ resource "aws_security_group" "minikube_sg" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["109.242.181.69/32"]
+    cidr_blocks = ["${chomp(data.http.my_public_ip.response_body)}/32"]
   }
 
   egress {

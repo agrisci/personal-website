@@ -4,7 +4,7 @@ appName: frontend-develop
 
 replicas: 1
 
-image: 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio:develop-3f10f57e7f1f529b2537a5c03deae8e740fdb854
+image: 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio:develop-1e78cfce7d40474af58c7e3ccb057206cccd2827
 
 imagePullSecrets: regcred
 

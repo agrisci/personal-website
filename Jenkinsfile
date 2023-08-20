@@ -44,40 +44,13 @@ pipeline {
               sh 'echo Building frontend image and pushing to registry'
               script{
                   if (env.GIT_BRANCH == 'origin/main') {
-                      env.DOCKER_TAG = "main-$GIT_COMMIT"
+                      env.REPO_ENV = "main"
                   } else {
-                      env.DOCKER_TAG = "develop-$GIT_COMMIT"
+                      env.REPO_ENV = "develop"
                   }
               }
-              sh '/kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio:$DOCKER_TAG'
+              sh '/kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio-$REPO_ENV:latest'
             }
-          }
-        }
-      }
-    }
-
-    stage('Bump helm chart version') {
-      steps {
-        sshagent(credentials: ['3c30a640-8c51-4770-b7cb-e6b1dfd45cb6']) {
-          dir("frontend/helm/values"){
-            sh 'echo Bumping helm chart version'
-            script{
-              if (env.GIT_BRANCH == 'origin/main') {
-                  env.DOCKER_TAG = "main-$GIT_COMMIT"
-                  env.BRANCH = "main"
-              } else {
-                  env.DOCKER_TAG = "develop-$GIT_COMMIT"
-                  env.BRANCH = "develop"
-              }
-            }
-            sh 'git checkout $BRANCH'
-            sh 'sed -E "s|image: .*|image: 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio:${DOCKER_TAG}|" "./${BRANCH}.yaml" > temp.yaml'
-            sh 'mv temp.yaml $BRANCH.yaml'
-            sh 'git config --global user.name "Jenkins"'
-            sh "git config --global user.email jenkins@ci.com"
-            sh 'git add .'
-            sh 'git commit -m "[Jenkins] Updated helm chart"'
-            sh 'git push origin $BRANCH'
           }
         }
       }
