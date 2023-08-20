@@ -4,6 +4,6 @@ appName: frontend-main
 
 replicas: 1
 
-image: 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio:main-cba13b2c618c8dd9e9d31f72540d45f358a7ff3b
+image: 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio:main-43a8b4b719e1798ae20ffea2dabb853b9e8fad68
 
 imagePullSecrets: regcred
