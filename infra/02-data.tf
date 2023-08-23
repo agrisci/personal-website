@@ -2,7 +2,7 @@ data "http" "my_public_ip" {
   url = "http://ifconfig.io"
 }
 
-data "aws_route53_zone" "my_domain_zone" {
+data "aws_route53_zone" "registered_domain" {
   name = var.registered_domain
 }
 

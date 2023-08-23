@@ -14,15 +14,19 @@ variable "availability_zone_b" {
 }
 
 variable "registered_domain" {
-  type    = string
+  type = string
+}
+
+variable "email" {
+  type = string
 }
 
 variable "apps_port_start" {
-  type    = number
+  type = number
 }
 
 variable "apps_port_end" {
-  type    = number
+  type = number
 }
 
 variable "ssh_public_key_file" {

@@ -11,10 +11,27 @@ resource "aws_lb_listener" "alb_http_listener" {
   protocol          = "HTTP"
 
   default_action {
+    type = "redirect"
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
+  }
+}
+
+resource "aws_lb_listener" "alb_https_listener" {
+  load_balancer_arn = aws_lb.load_balancer.arn
+  port              = 443
+  protocol          = "HTTPS"
+  certificate_arn   = aws_acm_certificate.acm_certificate.id
+
+  default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.main_branch_tg.arn
   }
 }
+
 
 resource "aws_lb_target_group" "develop_branch_tg" {
   name     = "develop-branch-app"
@@ -64,7 +81,7 @@ resource "aws_lb_target_group_attachment" "develop_branch_to_instance_1a" {
 
 
 resource "aws_lb_listener_rule" "main_branch_rule" {
-  listener_arn = aws_lb_listener.alb_http_listener.arn
+  listener_arn = aws_lb_listener.alb_https_listener.arn
 
   action {
     type             = "forward"
@@ -73,13 +90,13 @@ resource "aws_lb_listener_rule" "main_branch_rule" {
 
   condition {
     host_header {
-      values = ["${var.registered_domain}", "www.${var.registered_domain}"]
+      values = ["${var.registered_domain}"]
     }
   }
 }
 
 resource "aws_lb_listener_rule" "dev_branch_rule" {
-  listener_arn = aws_lb_listener.alb_http_listener.arn
+  listener_arn = aws_lb_listener.alb_https_listener.arn
 
   action {
     type             = "forward"
@@ -88,7 +105,7 @@ resource "aws_lb_listener_rule" "dev_branch_rule" {
 
   condition {
     host_header {
-      values = ["dev.${var.registered_domain}", "www.dev.${var.registered_domain}"]
+      values = ["dev.${var.registered_domain}"]
     }
   }
 }
