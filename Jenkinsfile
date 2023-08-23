@@ -3,6 +3,7 @@ pipeline {
   
   environment {
         USER_CREDENTIALS = credentials('aws-credentials')
+        BRANCH = 'develop'
   }
 
   agent {
@@ -14,7 +15,15 @@ pipeline {
               containers:
               - name: kaniko
                 image: gcr.io/kaniko-project/executor:debug
-                imagePullPolicy: Always
+                imagePullPolicy: IfNotPresent
+                tty: true
+                command:
+                - sleep
+                args:
+                - 99d
+              - name: aws-cli
+                image: amazon/aws-cli
+                imagePullPolicy: IfNotPresent
                 tty: true
                 command:
                 - sleep
@@ -24,7 +33,17 @@ pipeline {
     }
   }
   stages {
-    stage('Build App') {
+    stage('Set environment variables') {
+      steps {
+        script{
+          if (env.GIT_BRANCH == 'origin/main') {
+            env.BRANCH = "main"
+          }
+        }
+      }
+    }
+    
+    stage('Build apps') {
       steps {
         container('jnlp') {
           dir("frontend") {
@@ -36,22 +55,24 @@ pipeline {
       }
     }
 
-    stage('Build and push docker image to registry') {
+    stage('Build and push docker images to registry') {
       steps {
         container(name: 'kaniko', shell: '/busybox/sh') {
           dir("frontend") {
             withEnv(['PATH+EXTRA=/busybox']) {
               sh 'echo Building frontend image and pushing to registry'
-              script{
-                  if (env.GIT_BRANCH == 'origin/main') {
-                      env.REPO_ENV = "main"
-                  } else {
-                      env.REPO_ENV = "develop"
-                  }
-              }
-              sh '/kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio-$REPO_ENV:latest'
+              sh "/kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio-${env.BRANCH}:latest"
             }
           }
+        }
+      }
+    }
+
+    stage('Redeploy images to the ECS cluster') {
+      steps {
+        container(name: 'aws-cli') {
+          sh 'echo Redeploying frontend image'
+          sh "aws ecs update-service --cluster ecs-cluster --service devops-portfolio-${env.BRANCH}-service --force-new-deployment --region eu-central-1"
         }
       }
     }
