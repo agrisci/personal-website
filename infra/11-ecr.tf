@@ -26,7 +26,7 @@ resource "aws_ecr_lifecycle_policy" "devops_portfolio_main_repository_policy" {
     "rules": [
         {
             "rulePriority": 1,
-            "description": "Keep last 5 images",
+            "description": "Keep last 4 untagged images",
             "selection": {
                 "tagStatus": "untagged",
                 "countType": "imageCountMoreThan",
@@ -49,7 +49,7 @@ resource "aws_ecr_lifecycle_policy" "devops_portfolio_develop_repository_policy"
     "rules": [
         {
             "rulePriority": 1,
-            "description": "Keep last 5 images",
+            "description": "Keep last 4 untagged images",
             "selection": {
                 "tagStatus": "untagged",
                 "countType": "imageCountMoreThan",
