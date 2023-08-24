@@ -1,9 +1,0 @@
-namespace: devops-portfolio
-
-appName: frontend-main
-
-replicas: 1
-
-image: 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio:main-37bc35f4c7b889907174bd5b4555f527b0c12c05
-
-imagePullSecrets: regcred

@@ -7,6 +7,10 @@ terraform {
       source  = "hashicorp/http"
       version = "3.4.0"
     }
+    acme = {
+      source  = "vancluever/acme"
+      version = "~> 2.5.3"
+    }
   }
 }
 
@@ -16,5 +20,6 @@ provider "aws" {
   profile                  = "default"
 }
 
-provider "http" {
+provider "acme" {
+  server_url = "https://acme-v02.api.letsencrypt.org/directory"
 }

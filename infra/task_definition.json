@@ -1,0 +1,22 @@
+[
+  {
+    "name": "${CONTAINER_NAME}",
+    "image": "${CONTAINER_IMAGE}",
+    "cpu": 256,
+    "memory": 256,
+    "links": [],
+    "portMappings": [
+      {
+        "hostPort": ${PORT},
+        "containerPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "essential": true,
+    "entryPoint": [],
+    "command": [],
+    "environment": [],
+    "mountPoints": [],
+    "volumesFrom": []
+  }
+]
