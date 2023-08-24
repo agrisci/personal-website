@@ -61,7 +61,7 @@ pipeline {
           dir("frontend") {
             withEnv(['PATH+EXTRA=/busybox']) {
               sh 'echo Building frontend image and pushing to registry'
-              sh "/kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination 026978711726.dkr.ecr.eu-central-1.amazonaws.com/devops-portfolio-${env.BRANCH}:latest"
+              sh "/kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination 026978711726.dkr.ecr.eu-central-1.amazonaws.com/personal-website-${env.BRANCH}:latest"
             }
           }
         }
@@ -72,7 +72,7 @@ pipeline {
       steps {
         container(name: 'aws-cli') {
           sh 'echo Redeploying frontend image'
-          sh "aws ecs update-service --cluster ecs-cluster --service devops-portfolio-${env.BRANCH}-service --force-new-deployment --region eu-central-1"
+          sh "aws ecs update-service --cluster ecs-cluster --service personal-website-${env.BRANCH}-service --force-new-deployment --region eu-central-1"
         }
       }
     }

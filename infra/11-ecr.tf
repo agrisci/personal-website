@@ -1,5 +1,5 @@
-resource "aws_ecr_repository" "devops_portfolio_main_repository" {
-  name                 = "devops-portfolio-main"
+resource "aws_ecr_repository" "personal_website_main_repository" {
+  name                 = "personal-website-main"
   image_tag_mutability = "MUTABLE"
   force_delete         = false
 
@@ -8,8 +8,8 @@ resource "aws_ecr_repository" "devops_portfolio_main_repository" {
   }
 }
 
-resource "aws_ecr_repository" "devops_portfolio_develop_repository" {
-  name                 = "devops-portfolio-develop"
+resource "aws_ecr_repository" "personal_website_develop_repository" {
+  name                 = "personal-website-develop"
   image_tag_mutability = "MUTABLE"
   force_delete         = false
 
@@ -18,8 +18,8 @@ resource "aws_ecr_repository" "devops_portfolio_develop_repository" {
   }
 }
 
-resource "aws_ecr_lifecycle_policy" "devops_portfolio_main_repository_policy" {
-  repository = aws_ecr_repository.devops_portfolio_main_repository.name
+resource "aws_ecr_lifecycle_policy" "personal_website_main_repository_policy" {
+  repository = aws_ecr_repository.personal_website_main_repository.name
 
   policy = <<EOF
 {
@@ -41,8 +41,8 @@ resource "aws_ecr_lifecycle_policy" "devops_portfolio_main_repository_policy" {
 EOF
 }
 
-resource "aws_ecr_lifecycle_policy" "devops_portfolio_develop_repository_policy" {
-  repository = aws_ecr_repository.devops_portfolio_develop_repository.name
+resource "aws_ecr_lifecycle_policy" "personal_website_develop_repository_policy" {
+  repository = aws_ecr_repository.personal_website_develop_repository.name
 
   policy = <<EOF
 {
