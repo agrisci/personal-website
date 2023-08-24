@@ -3,7 +3,6 @@ pipeline {
   
   environment {
         USER_CREDENTIALS = credentials('aws-credentials')
-        BRANCH = 'develop'
   }
 
   agent {
@@ -36,7 +35,9 @@ pipeline {
     stage('Set environment variables') {
       steps {
         script{
-          if (env.GIT_BRANCH == 'origin/main') {
+          if (env.GIT_BRANCH == 'origin/develop') {
+            env.BRANCH = "develop"
+          }else{
             env.BRANCH = "main"
           }
         }
