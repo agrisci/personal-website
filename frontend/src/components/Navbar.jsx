@@ -1,7 +1,9 @@
+import { Link } from "react-scroll";
+
 const Navbar = () => {
   return (
     <>
-      <div className="navbar bg-base-100 sticky top-0">
+      <div className="navbar sticky bg-neutral top-0 z-50">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -24,17 +26,25 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>About</a>
+              <li className="py-2">
+                <Link to="About" spy={true} smooth={true}>
+                  About
+                </Link>
               </li>
-              <li>
-                <a>Projects</a>
+              <li className="py-2">
+                <Link to="Projects" spy={true} smooth={true}>
+                  Projects
+                </Link>
               </li>
-              <li>
-                <a>Resume</a>
+              <li className="py-2">
+                <Link to="Resume" spy={true} smooth={true}>
+                  Resume
+                </Link>
               </li>
-              <li>
-                <a>Contact</a>
+              <li className="py-2">
+                <Link to="Contact" spy={true} smooth={true}>
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
