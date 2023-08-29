@@ -55,16 +55,24 @@ const Navbar = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>About</a>
+              <Link to="About" spy={true} smooth={true}>
+                About
+              </Link>
             </li>
             <li>
-              <a>Projects</a>
+              <Link to="Projects" spy={true} smooth={true}>
+                Projects
+              </Link>
             </li>
             <li>
-              <a>Resume</a>
+              <Link to="Resume" spy={true} smooth={true}>
+                Resume
+              </Link>
             </li>
             <li>
-              <a>Contact</a>
+              <Link to="Contact" spy={true} smooth={true}>
+                Contact
+              </Link>
             </li>
           </ul>
         </div>
