@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "./scripts/generate_resume_images.sh",
     "dev": "vite",
-    "build": "rm -rf dist && vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "prebuild": "./scripts/generate_resume_images.sh",
+    "build": "rm -rf dist && vite build"
   },
   "dependencies": {
     "react": "^18.2.0",
