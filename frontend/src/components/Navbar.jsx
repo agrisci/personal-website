@@ -27,22 +27,22 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li className="py-2">
-                <Link to="About" spy={true} offset={-64} smooth={true}>
+                <Link to="About" spy={true} offset={-63} smooth={true}>
                   About
                 </Link>
               </li>
               <li className="py-2">
-                <Link to="Projects" spy={true} offset={-64} smooth={true}>
+                <Link to="Projects" spy={true} offset={-63} smooth={true}>
                   Projects
                 </Link>
               </li>
               <li className="py-2">
-                <Link to="Resume" spy={true} offset={-64} smooth={true}>
+                <Link to="Resume" spy={true} offset={-63} smooth={true}>
                   Resume
                 </Link>
               </li>
               <li className="py-2">
-                <Link to="Contact" spy={true} offset={-64} smooth={true}>
+                <Link to="Contact" spy={true} offset={-63} smooth={true}>
                   Contact
                 </Link>
               </li>
@@ -55,22 +55,22 @@ const Navbar = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link to="About" spy={true} offset={-64} smooth={true}>
+              <Link to="About" spy={true} offset={-63} smooth={true}>
                 About
               </Link>
             </li>
             <li>
-              <Link to="Projects" spy={true} offset={-64} smooth={true}>
+              <Link to="Projects" spy={true} offset={-63} smooth={true}>
                 Projects
               </Link>
             </li>
             <li>
-              <Link to="Resume" spy={true} offset={-64} smooth={true}>
+              <Link to="Resume" spy={true} offset={-63} smooth={true}>
                 Resume
               </Link>
             </li>
             <li>
-              <Link to="Contact" spy={true} offset={-64} smooth={true}>
+              <Link to="Contact" spy={true} offset={-63} smooth={true}>
                 Contact
               </Link>
             </li>
