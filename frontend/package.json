@@ -10,6 +10,7 @@
     "build": "rm -rf dist && vite build"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal-image": "^2.6.0",
