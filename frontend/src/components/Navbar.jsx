@@ -48,9 +48,15 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl" href="/">
+          <Link
+            className="btn btn-ghost normal-case text-xl"
+            to="About"
+            spy={true}
+            offset={-68}
+            smooth={true}
+          >
             Apostolis Tanopoulos
-          </a>
+          </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
