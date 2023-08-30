@@ -17,6 +17,7 @@ const Projects = () => {
               <div className="badge badge-secondary">Terraform</div>
               <div className="badge badge-accent">Jenkins</div>
               <div className="badge badge-primary">Docker</div>
+              <div className="badge badge-primary">Bash</div>
               <div className="badge badge-accent">React</div>
             </div>
             <p>
