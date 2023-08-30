@@ -11,7 +11,7 @@ const Resume = () => {
         <ModalImage
           small={"/resume-small.png"}
           medium={"/resume-medium.png"}
-          large={"/resume.png"}
+          large={"/resume-large.png"}
           hideDownload={true}
           alt="Resume"
         />

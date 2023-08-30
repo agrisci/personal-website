@@ -12,6 +12,14 @@ pipeline {
             kind: Pod
             spec:
               containers:
+              - name: ubuntu
+                image: ubuntu:jammy-20230804
+                imagePullPolicy: IfNotPresent
+                tty: true
+                command:
+                - sleep
+                args:
+                - 99d
               - name: kaniko
                 image: gcr.io/kaniko-project/executor:debug
                 imagePullPolicy: IfNotPresent
@@ -51,6 +59,17 @@ pipeline {
               sh 'echo Building frontend app static bundle'
               sh 'npm install'
               sh 'npm run build'
+          }
+        }
+        container('ubuntu') {
+          dir("frontend/dist") {
+              sh 'apt-get update && apt-get install poppler-utils -y'
+              sh 'pdftocairo resume.pdf -png -scale-to 800'
+              sh 'mv resume-1.png resume-small.png'
+              sh 'pdftocairo resume.pdf -png -scale-to 1200'
+              sh 'mv resume-1.png resume-medium.png'
+              sh 'pdftocairo resume.pdf -png'
+              sh 'mv resume-1.png resume-large.png'
           }
         }
       }
