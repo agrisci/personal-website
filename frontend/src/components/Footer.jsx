@@ -5,7 +5,7 @@ const Footer = () => {
         <div>
           <div className="grid grid-flow-col gap-4">
             <a
-              href="https://github.com/agrisci"
+              href="https://www.linkedin.com/in/apostolos-tanopoulos"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -20,7 +20,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://www.linkedin.com/in/apostolos-tanopoulos"
+              href="https://github.com/agrisci"
               target="_blank"
               rel="noopener noreferrer"
             >
