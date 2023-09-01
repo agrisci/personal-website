@@ -13,8 +13,26 @@ const About = () => {
           <div className="py-6 lg:py-0">
             <h1 className="text-5xl font-bold">Hi, I'm Apostolis Tanopoulos</h1>
             <p className="pt-7">
-              Currently employed as a Web Developer/DevOps Engineer at Emotiva
-              via Conveos, I'm a DevOps enthusiast with a strong foundation in
+              Currently employed as a Web Developer/DevOps Engineer working for
+              clients like{" "}
+              <a
+                className="font-bold"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://emotiva.it/en/emotion-ai-company/"
+              >
+                Emotiva
+              </a>{" "}
+              and{" "}
+              <a
+                className="font-bold"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.24orebs.com/"
+              >
+                24ORE Business School
+              </a>{" "}
+              via Conveos , I'm a DevOps enthusiast with a strong foundation in
               Web Development and Linux System Administration.
             </p>
             <h1 className="text-2xl font-bold pt-5 pb-2">Why DevOps?</h1>
