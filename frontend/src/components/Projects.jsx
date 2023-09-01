@@ -39,12 +39,12 @@ const Projects = () => {
         <div className="card lg:card-side bg-secondary-content shadow-xl">
           <figure className="lg:order-last">
             <img
-              className="object-cover w-1/3 cursor-pointer mr-2"
+              className="object-cover max-h-96 cursor-pointer mr-2"
               src="https://raw.githubusercontent.com/agrisci/heraklion-waterstatus/master/project-assets/apk-img/1.png"
               alt="Album"
             />
             <img
-              className="object-cover w-1/3 cursor-pointer ml-2"
+              className="object-cover max-h-96 cursor-pointer ml-2"
               src="https://raw.githubusercontent.com/agrisci/heraklion-waterstatus/master/project-assets/apk-img/2.png"
               alt="Album"
             />

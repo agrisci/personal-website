@@ -13,15 +13,9 @@ const About = () => {
           <div className="py-6 lg:py-0">
             <h1 className="text-5xl font-bold">Hi, I'm Apostolis Tanopoulos</h1>
             <p className="pt-7">
-              I'm a DevOps enthusiast with a strong foundation in Web
-              Development and Linux System Administration. Currently, I'm
-              employed as a Web Developer/DevOps Engineer, where I apply my
-              expertise in technologies like{" "}
-              <span className="font-bold">
-                AWS, Terraform, Kubernetes, Docker, Jenkins, GitLab, AWS and
-                more
-              </span>{" "}
-              to streamline and enhance development and deployment processes.
+              Currently employed as a Web Developer/DevOps Engineer at Emotiva
+              via Conveos, I'm a DevOps enthusiast with a strong foundation in
+              Web Development and Linux System Administration.
             </p>
             <h1 className="text-2xl font-bold pt-5 pb-2">Why DevOps?</h1>
             <p>
@@ -36,19 +30,13 @@ const About = () => {
               My Playground: Homelab and Work
             </h1>
             <p>
-              At my HomeLab and my current workplace, I continually explore and
-              implement cutting-edge technologies, ensuring that I stay at the
-              forefront of the tech landscape. Whether it's experimenting with
-              new tools or optimizing existing processes, I'm fueled by my
-              curiosity and eagerness to acquire knowledge.
-            </p>
-            <h1 className="text-2xl font-bold pt-5 pb-2">Why Choose Me?</h1>
-            <p>
-              My background in Web Development ensures a keen eye for
-              application delivery, while my Linux expertise guarantees robust
-              infrastructure and security. I'm here to optimize your development
-              and operations, driving your DevOps journey to success. Welcome to
-              my portfolio, where expertise meets innovation, and DevOps thrive.
+              In my Homelab and at my current workplace, I continually explore
+              and implement cutting-edge technologies, ensuring that I remain at
+              the forefront of the tech landscape. I experiment with tools like
+              AWS, Terraform, Kubernetes, Docker, Jenkins, GitLab, ArgoCD and
+              more. Whether I'm optimizing existing processes or trying out new
+              tools, my curiosity and eagerness to acquire knowledge drive me
+              forward, all while prioritizing automation to enhance efficiency.
             </p>
           </div>
         </div>
