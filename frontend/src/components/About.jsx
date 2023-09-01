@@ -18,7 +18,8 @@ const About = () => {
               employed as a Web Developer/DevOps Engineer, where I apply my
               expertise in technologies like{" "}
               <span className="font-bold">
-                Kubernetes, Docker, Jenkins, GitLab, AWS, Terraform, and more
+                AWS, Terraform, Kubernetes, Docker, Jenkins, GitLab, AWS and
+                more
               </span>{" "}
               to streamline and enhance development and deployment processes.
             </p>
@@ -27,7 +28,9 @@ const About = () => {
               I'm passionate about DevOps because it's the bridge that
               transforms code into powerful, automated solutions. It's not
               merely a career choice; it's a commitment to efficient software
-              development, deployment, and continuous innovation.
+              development, deployment, and continuous innovation. I thrive on
+              curiosity and the desire to understand how things work, making
+              every project an opportunity to learn and grow.
             </p>
             <h1 className="text-2xl font-bold pt-5 pb-2">
               My Playground: Homelab and Work
@@ -36,8 +39,8 @@ const About = () => {
               At my HomeLab and my current workplace, I continually explore and
               implement cutting-edge technologies, ensuring that I stay at the
               forefront of the tech landscape. Whether it's experimenting with
-              new tools or optimizing existing processes, I thrive on the
-              challenge.
+              new tools or optimizing existing processes, I'm fueled by my
+              curiosity and eagerness to acquire knowledge.
             </p>
             <h1 className="text-2xl font-bold pt-5 pb-2">Why Choose Me?</h1>
             <p>
