@@ -12,10 +12,40 @@ const About = () => {
           />
           <div className="py-6 lg:py-0">
             <h1 className="text-5xl font-bold">Hi, I'm Apostolis Tanopoulos</h1>
-            <p className="py-7">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+            <p className="pt-7">
+              I'm a DevOps enthusiast with a strong foundation in Web
+              Development and Linux System Administration. Currently, I'm
+              employed as a Web Developer/DevOps Engineer, where I apply my
+              expertise in technologies like{" "}
+              <span className="font-bold">
+                Kubernetes, Docker, Jenkins, GitLab, AWS, Terraform, and more
+              </span>{" "}
+              to streamline and enhance development and deployment processes.
+            </p>
+            <h1 className="text-2xl font-bold pt-5 pb-2">Why DevOps?</h1>
+            <p>
+              I'm passionate about DevOps because it's the bridge that
+              transforms code into powerful, automated solutions. It's not
+              merely a career choice; it's a commitment to efficient software
+              development, deployment, and continuous innovation.
+            </p>
+            <h1 className="text-2xl font-bold pt-5 pb-2">
+              My Playground: Homelab and Work
+            </h1>
+            <p>
+              At my HomeLab and my current workplace, I continually explore and
+              implement cutting-edge technologies, ensuring that I stay at the
+              forefront of the tech landscape. Whether it's experimenting with
+              new tools or optimizing existing processes, I thrive on the
+              challenge.
+            </p>
+            <h1 className="text-2xl font-bold pt-5 pb-2">Why Choose Me?</h1>
+            <p>
+              My background in Web Development ensures a keen eye for
+              application delivery, while my Linux expertise guarantees robust
+              infrastructure and security. I'm here to optimize your development
+              and operations, driving your DevOps journey to success. Welcome to
+              my portfolio, where expertise meets innovation, and DevOps thrive.
             </p>
           </div>
         </div>
