@@ -16,7 +16,7 @@ const About = () => {
               Currently employed as a Web Developer/DevOps Engineer working for
               clients like{" "}
               <a
-                className="font-bold"
+                className="font-bold underline"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://emotiva.it/en/emotion-ai-company/"
@@ -25,7 +25,7 @@ const About = () => {
               </a>{" "}
               and{" "}
               <a
-                className="font-bold"
+                className="font-bold underline"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.24orebs.com/"
