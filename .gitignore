@@ -1,6 +1,6 @@
 node_modules
 dist
-*.png
+*resume*.png
 
 **/.terraform/*
 
