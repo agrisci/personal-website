@@ -7,11 +7,20 @@ const Resume = () => {
       name="Resume"
     >
       <h1 className="text-3xl text-center font-bold pb-10">Resume</h1>
-      <div className="flex justify-center">
+      <div className="flex justify-center items-center flex-col lg:flex-row">
         <ModalImage
-          small={"/resume-small.png"}
-          medium={"/resume-medium.png"}
-          large={"/resume-large.png"}
+          className="p-1"
+          small={"/resume-small-1.png"}
+          medium={"/resume-medium-1.png"}
+          large={"/resume-large-1.png"}
+          hideDownload={true}
+          alt="Resume"
+        />
+        <ModalImage
+          className="p-1"
+          small={"/resume-small-2.png"}
+          medium={"/resume-medium-2.png"}
+          large={"/resume-large-2.png"}
           hideDownload={true}
           alt="Resume"
         />

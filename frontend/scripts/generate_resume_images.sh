@@ -51,8 +51,11 @@ fi
 # Generate png images based on the resume.pdf
 cd public/
 pdftocairo resume.pdf -png -scale-to 800
-mv resume-1.png resume-small.png
+mv resume-1.png resume-small-1.png
+mv resume-2.png resume-small-2.png
 pdftocairo resume.pdf -png -scale-to 1200
-mv resume-1.png resume-medium.png
+mv resume-1.png resume-medium-1.png
+mv resume-2.png resume-medium-2.png
 pdftocairo resume.pdf -png
-mv resume-1.png resume-large.png
+mv resume-1.png resume-large-1.png
+mv resume-2.png resume-large-2.png

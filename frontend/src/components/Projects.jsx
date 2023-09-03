@@ -6,7 +6,8 @@ const Projects = () => {
         <div className="card lg:card-side bg-secondary-content shadow-xl mb-10">
           <figure>
             <img
-              src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg"
+              className="object-cover !max-w-sm cursor-pointer"
+              src="/portfolio.png"
               alt="Album"
             />
           </figure>
@@ -39,12 +40,12 @@ const Projects = () => {
         <div className="card lg:card-side bg-secondary-content shadow-xl">
           <figure className="lg:order-last">
             <img
-              className="object-cover max-h-96 cursor-pointer mr-2"
+              className="object-cover max-h-96 lg:w-1/2 cursor-pointer mr-2"
               src="https://raw.githubusercontent.com/agrisci/heraklion-waterstatus/master/project-assets/apk-img/1.png"
               alt="Album"
             />
             <img
-              className="object-cover max-h-96 cursor-pointer ml-2"
+              className="object-cover max-h-96 lg:w-1/2 cursor-pointer ml-2"
               src="https://raw.githubusercontent.com/agrisci/heraklion-waterstatus/master/project-assets/apk-img/2.png"
               alt="Album"
             />
