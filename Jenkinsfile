@@ -12,6 +12,14 @@ pipeline {
             kind: Pod
             spec:
               containers:
+              - name: ubuntu
+                image: ubuntu:jammy-20230804
+                imagePullPolicy: IfNotPresent
+                tty: true
+                command:
+                - sleep
+                args:
+                - 99d
               - name: kaniko
                 image: gcr.io/kaniko-project/executor:debug
                 imagePullPolicy: IfNotPresent
@@ -46,11 +54,11 @@ pipeline {
     
     stage('Build apps') {
       steps {
-        container('jnlp') {
+        container('ubuntu') {
           dir("frontend") {
-              sh 'echo Building frontend app static bundle'
-              sh 'npm install'
-              sh 'npm run build'
+            sh 'echo Building frontend app static bundle'
+            sh 'npm install'
+            sh 'npm run build'
           }
         }
       }

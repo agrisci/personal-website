@@ -1,9 +1,19 @@
-import "./App.css";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Resume from "./components/Resume";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <Navbar />
+      <About />
+      <Projects />
+      <Resume />
+      <Contact />
+      <Footer />
     </>
   );
 }

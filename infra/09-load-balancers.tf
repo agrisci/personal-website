@@ -1,8 +1,9 @@
 resource "aws_lb" "load_balancer" {
-  name               = "load-balancer"
-  load_balancer_type = "application"
-  security_groups    = [aws_security_group.alb_sg.id]
-  subnets            = [aws_subnet.public_subnet_a.id, aws_subnet.public_subnet_b.id]
+  name                       = "load-balancer"
+  load_balancer_type         = "application"
+  security_groups            = [aws_security_group.alb_sg.id]
+  subnets                    = [aws_subnet.public_subnet_a.id, aws_subnet.public_subnet_b.id]
+  drop_invalid_header_fields = true
 }
 
 resource "aws_lb_listener" "alb_http_listener" {
